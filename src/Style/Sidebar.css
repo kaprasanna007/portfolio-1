@@ -1,0 +1,273 @@
+/* Sidebar.css */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 260px;
+  background: #11101d;
+  color: #fff;
+  transition: all 0.4s ease;
+  overflow-y: auto;
+  z-index: 100;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* When closed */
+.sidebar.close {
+  width: 80px;
+}
+
+.sidebar .logo_items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: 1px solid #2a2a3b;
+}
+
+.sidebar .logo_items .logo_name {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-left: 10px;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar.close .logo_name {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar .logo_items i {
+  font-size: 22px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.sidebar .logo_items i:hover {
+  color: red;
+}
+
+/* Profile section */
+.sidebar_profile {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-top: 1px solid #2a2a3b;
+  margin-top: 20px;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar.close .sidebar_profile {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar_profile .nav_image img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #00bcd4;
+}
+
+.sidebar_profile .data_text {
+  margin-left: 12px;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar.close .data_text {
+  opacity: 0;
+}
+
+.sidebar_profile .name {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.sidebar_profile .email {
+  font-size: 0.75rem;
+  color: #bbb;
+}
+
+/* Menu Container */
+.menu_container {
+  margin-top: 10px;
+  padding: 0 10px;
+}
+
+.menu_item {
+  margin-bottom: 15px;
+}
+
+.menu_title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #bbb;
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar.close .menu_title {
+  opacity: 0;
+}
+
+.menu_title .line {
+  flex: 1;
+  height: 1px;
+  background: #2a2a3b;
+  margin-left: 10px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 10px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.link:hover {
+  background: red;
+  transform: translateX(5px);
+}
+
+.link i {
+  font-size: 20px;
+  min-width: 24px;
+  text-align: center;
+}
+
+.link span {
+  transition: opacity 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.sidebar.close .link span {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Flex Utility */
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+/* Social Icons */
+.nav_image img {
+  width: 28px;
+  height: 28px;
+}
+
+.l_iocion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 15px 0;
+  border-top: 1px solid #2a2a3b;
+  margin-top: 20px;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar.close .l_iocion {
+  opacity: 0;
+}
+
+.l_iocion a {
+  color: #ffffff;
+  font-size: 24px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.l_iocion a:hover {
+  color: red;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+/* 📱 Mobile Responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 280px;
+    transform: translateX(-100%);
+  }
+  
+  .sidebar.mobile-open {
+    transform: translateX(0);
+  }
+  
+  .sidebar.close {
+    width: 280px;
+    transform: translateX(-100%);
+  }
+  
+  .sidebar.close.mobile-open {
+    transform: translateX(0);
+  }
+  
+  .logo_name {
+    font-size: 0.9rem;
+  }
+  
+  /* Show all content on mobile when open */
+  .sidebar.mobile-open .logo_name,
+  .sidebar.mobile-open .data_text,
+  .sidebar.mobile-open .menu_title,
+  .sidebar.mobile-open .link span,
+  .sidebar.mobile-open .l_iocion {
+    opacity: 1 !important;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .sidebar {
+    width: 100%;
+  }
+  
+  .sidebar .logo_items {
+    padding: 12px;
+  }
+  
+  .link {
+    padding: 15px 12px;
+  }
+  
+  .link i {
+    font-size: 22px;
+  }
+}
+
+/* Hide lock icon on mobile */
+@media (max-width: 768px) {
+  #lock-icon {
+    display: none;
+  }
+}
+
+/* Scrollbar Styling */
+.sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: #11101d;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #00bcd4;
+  border-radius: 2px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: #00e5ff;
+}

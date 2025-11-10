@@ -1,0 +1,197 @@
+.skill-page {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-page .tech-stack-container {
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: transparent;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skill-page .tech-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+  width: 100%;
+}
+
+.skill-page .col {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.skill-page .col h1 {
+  font-size: 2.5rem;
+  color: red;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+  transition: color 0.3s ease;
+}
+
+.skill-page .col:hover h1 {
+  color: aqua;
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+}
+
+.skill-page .tech-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* ✅ 3D rotation container */
+.rotate-3d {
+  perspective: 1000px;
+  display: inline-block;
+}
+
+.rotate-3d-inner {
+  display: inline-block;
+  transform-style: preserve-3d;
+  animation: spin3D 8s linear infinite;
+}
+
+@keyframes spin3D {
+  0% {
+    transform: rotateY(0deg) rotateX(0deg);
+  }
+  50% {
+    transform: rotateY(180deg) rotateX(10deg);
+  }
+  100% {
+    transform: rotateY(360deg) rotateX(0deg);
+  }
+}
+
+/* ✅ Tech items */
+.skill-page .tech-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.skill-page .tech-item i {
+  font-size: 3rem;
+  filter: brightness(0.95);
+  transition: transform 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease;
+}
+
+.skill-page .tech-item:hover {
+  transform: translateY(-5px);
+}
+
+.skill-page .tech-item:hover i {
+  transform: scale(1.25);
+  filter: brightness(1.4);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+  cursor: pointer;
+}
+
+/* ✅ Name below each icon */
+.skill-page .tech-name {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+/* Tooltip */
+.skill-page .tech-item::after {
+  content: attr(title);
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(51, 51, 51, 0.9);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.skill-page .tech-item:hover::after {
+  opacity: 1;
+}
+
+/* 📱 Tablet (768px - 1023px) */
+@media (min-width: 768px) {
+  .skill-page .tech-stack-container {
+    padding: 50px 30px;
+  }
+  
+  .skill-page .tech-stack {
+    gap: 60px;
+  }
+  
+  .skill-page .col h1 {
+    font-size: 3rem;
+  }
+  
+  .skill-page .tech-item i {
+    font-size: 4rem;
+  }
+  
+  .skill-page .tech-row {
+    gap: 40px;
+  }
+  
+  .skill-page .tech-name {
+    font-size: 1.1rem;
+  }
+}
+
+/* 🖥️ Desktop (1024px+) */
+@media (min-width: 1024px) {
+  .skill-page .tech-stack-container {
+    padding: 60px 40px;
+  }
+  
+  .skill-page .tech-stack {
+    gap: 70px;
+  }
+  
+  .skill-page .col h1 {
+    font-size: 3.5rem;
+  }
+  
+  .skill-page .tech-item i {
+    font-size: 5rem;
+  }
+  
+  .skill-page .tech-row {
+    gap: 80px;
+  }
+  
+  .skill-page .tech-name {
+    font-size: 1.2rem;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1200px) {
+  .skill-page .tech-stack-container {
+    max-width: 1400px;
+  }
+}

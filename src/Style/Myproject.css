@@ -1,0 +1,161 @@
+/* Full page background */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-size: cover;
+  color: white;
+  min-height: 100vh;
+}
+
+/* Container for all boxes */
+.portfolio-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+/* Each rectangular card */
+.card {
+  background: rgba(10, 10, 40, 0.9);
+  border: 2px solid cyan;
+  border-radius: 15px;
+  box-shadow: 0 0 25px cyan;
+  width: 100%;
+  max-width: 400px;
+  padding: 25px;
+  text-align: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 350px;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 0 40px cyan;
+}
+
+.card h2 {
+  color: #00ffff;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.card h2:first-child {
+  color: #ff6b6b;
+  font-size: 1.1rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 15px 0;
+  text-align: left;
+  flex-grow: 1;
+}
+
+/* GitHub button */
+.card button {
+  background: cyan;
+  color: #111;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 15px;
+}
+
+.card button:hover {
+  background: #00ffff;
+  box-shadow: 0 0 20px cyan;
+  transform: translateY(-3px);
+}
+
+.card button:active {
+  transform: translateY(-1px);
+}
+
+.col1 {
+  color: red;
+  font-size: 1.1rem;
+}
+
+/* 📱 Tablet (768px - 1023px) */
+@media (min-width: 768px) {
+  .portfolio-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 30px;
+  }
+  
+  .card {
+    width: calc(50% - 15px);
+    max-width: 350px;
+    min-height: 380px;
+  }
+  
+  .card h2 {
+    font-size: 1.4rem;
+  }
+  
+  .card h2:first-child {
+    font-size: 1.2rem;
+  }
+  
+  .card p {
+    font-size: 1rem;
+  }
+}
+
+/* 🖥️ Desktop (1024px+) */
+@media (min-width: 1024px) {
+  .portfolio-container {
+    flex-wrap: nowrap;
+    gap: 40px;
+    padding: 40px;
+  }
+  
+  .card {
+    width: 300px;
+    height: 350px;
+    min-height: 350px;
+  }
+  
+  .card h2 {
+    font-size: 1.4rem;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1200px) {
+  .portfolio-container {
+    max-width: 1400px;
+    gap: 50px;
+  }
+  
+  .card {
+    width: 320px;
+    height: 370px;
+  }
+  
+  .card:hover {
+    transform: translateY(-15px) scale(1.05);
+  }
+}

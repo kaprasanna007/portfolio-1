@@ -1,0 +1,161 @@
+.about-container {
+  padding: 20px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: transparent;
+  width: 100%;
+}
+
+.about-card {
+  background: rgba(10, 10, 60, 0.85);
+  padding: 25px;
+  border-radius: 20px;
+  border: 2px solid #00bcd4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  max-width: 1000px;
+  box-shadow: 0 0 20px rgba(0, 188, 212, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 0 auto;
+  backdrop-filter: blur(10px);
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(0, 188, 212, 0.7);
+}
+
+.profile-photo {
+  width: 150px;
+  height: 180px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 3px solid #00bcd4;
+  box-shadow: 0 0 15px rgba(0, 188, 212, 0.6);
+  transition: transform 0.3s ease;
+}
+
+.profile-photo:hover {
+  transform: scale(1.05);
+}
+
+.about-text {
+  width: 100%;
+  text-align: center;
+}
+
+.about-text h1 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #00e5ff;
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+}
+
+.a1 {
+  width: 100%;
+}
+
+.p1 {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #e0e0e0;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.p2 {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(0, 188, 212, 0.1);
+  border-radius: 10px;
+  border-left: 4px solid #00bcd4;
+}
+
+.p2 b {
+  color: #00e5ff;
+  font-size: 1rem;
+}
+
+.p2 p {
+  margin: 8px 0;
+  padding-left: 10px;
+}
+
+.p3 {
+  margin-top: 20px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  font-style: italic;
+  border-left: 4px solid #377dff;
+}
+
+/* 📱 Tablet (768px - 1023px) */
+@media (min-width: 768px) {
+  .about-container {
+    padding: 30px;
+  }
+  
+  .about-card {
+    flex-direction: row;
+    text-align: left;
+    padding: 30px;
+    gap: 40px;
+  }
+  
+  .about-text {
+    text-align: left;
+  }
+  
+  .about-text h1 {
+    font-size: 2rem;
+    text-align: left;
+  }
+  
+  .profile-photo {
+    width: 180px;
+    height: 220px;
+  }
+  
+  .p1 {
+    font-size: 1.05rem;
+  }
+}
+
+/* 🖥️ Desktop (1024px+) */
+@media (min-width: 1024px) {
+  .about-container {
+    padding: 50px;
+  }
+  
+  .about-card {
+    padding: 40px;
+    gap: 50px;
+  }
+  
+  .about-text h1 {
+    font-size: 2.2rem;
+  }
+  
+  .profile-photo {
+    width: 200px;
+    height: 240px;
+  }
+  
+  .p1 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1200px) {
+  .about-card {
+    max-width: 1100px;
+  }
+}

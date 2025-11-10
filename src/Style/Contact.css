@@ -1,0 +1,159 @@
+.contact-section {
+  padding: 40px 20px;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #00e5ff;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+}
+
+.contact-form {
+  background: rgba(10, 10, 60, 0.85);
+  padding: 25px;
+  border-radius: 15px;
+  border: 2px solid #00bcd4;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 0 20px rgba(0, 188, 212, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.contact-form label {
+  color: #00e5ff;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  background: #2a2a3b;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #00bcd4;
+  box-shadow: 0 0 10px rgba(0, 188, 212, 0.3);
+  transform: translateY(-2px);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #aaa;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+.send-button {
+  background: #00bcd4;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.send-button:hover {
+  background: #00e5ff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 229, 255, 0.4);
+}
+
+.send-button:active {
+  transform: translateY(0);
+}
+
+.status-message {
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+/* 📱 Tablet (768px - 1023px) */
+@media (min-width: 768px) {
+  .contact-section {
+    padding: 50px 30px;
+  }
+  
+  .contact-section h2 {
+    font-size: 2.5rem;
+  }
+  
+  .contact-form {
+    max-width: 500px;
+    padding: 35px;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 14px 18px;
+    font-size: 1.05rem;
+  }
+  
+  .send-button {
+    padding: 14px 25px;
+    font-size: 1.1rem;
+  }
+}
+
+/* 🖥️ Desktop (1024px+) */
+@media (min-width: 1024px) {
+  .contact-section {
+    padding: 60px 40px;
+  }
+  
+  .contact-section h2 {
+    font-size: 3rem;
+  }
+  
+  .contact-form {
+    max-width: 550px;
+    padding: 40px;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 15px 20px;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1200px) {
+  .contact-section {
+    max-width: 1400px;
+  }
+}
